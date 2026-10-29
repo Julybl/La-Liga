@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07120f">
+  <meta name="description" content="Calendario de los próximos partidos de la liga, con horarios locales para Latinoamérica, España y Nevada.">
+  <title>Liga — Próximos partidos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="pitch-lines" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Matchday inicio">
+      <span class="brand-mark"><svg viewBox="0 0 48 48" role="img" aria-label="Balón"><circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 14 32 20 29 30 19 30 16 20Z M24 14 24 4 M32 20 43 18 M29 30 35 40 M19 30 13 40 M16 20 5 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+      <span>UNIVERSO FOOTBALL<span class="brand-dot">.</span></span>
+    </a>
+    <div class="topbar-right"><span class="live-dot"></span><span>CALENDARIO OFICIAL</span><span class="season">TEMPORADA 2026</span></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> DESPUES DEL MERCADO SE VIENE... </p>
+        <h1>LOS PROXIMOS<br><span>PARTIDOS DE LA LIGA</span><i>.</i></h1>
+        <p class="hero-subtitle">Cada partido cuenta.<br>¿Serás capaz de llevar a tu equipo a la victoria?.</p>
+        <a class="hero-cta" href="#fixtures">VER LOS ENCUENTROS <span>↓</span></a>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="hero-ball"><svg viewBox="0 0 200 200"><defs><linearGradient id="ballshine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7fff9"/><stop offset="1" stop-color="#8aa99b"/></linearGradient></defs><circle cx="100" cy="100" r="88" fill="url(#ballshine)"/><g fill="#0b1b15" stroke="#0b1b15" stroke-width="2"><polygon points="100,65 123,82 114,109 86,109 77,82"/><polygon points="100,22 116,32 110,51 90,51 84,32"/><polygon points="153,59 174,67 171,89 150,94 137,77"/><polygon points="151,131 165,148 153,166 132,160 130,140"/><polygon points="49,131 70,140 68,160 47,166 35,148"/><polygon points="47,59 63,77 50,94 29,89 26,67"/></g><g fill="none" stroke="#0b1b15" stroke-width="4"><path d="M100 65 100 51 M123 82 137 77 M114 109 130 140 M86 109 68 140 M77 82 63 77"/></g></svg></div>
+        <div class="hero-stamp"><strong></strong><span></span></div>
+        <div class="hero-caption">TU JUEGO Y TU EQUIPO.</div>
+      </div>
+      <div class="hero-bottom"><span>29 OCT — 03 NOV</span><span class="scroll-cue">SCROLL PARA DESCUBRIR <b>↘</b></span></div>
+    </section>
+
+    <section class="ticker" aria-label="Frase de fútbol"><div class="ticker-track"><span>LA MEJOR LIGA</span><b>✳</b><span>DE UNIVERSO FOOTBALL</span><b>✳</b><span>LA MEJOR LIGA</span><b>✳</b><span>DE UNIVERSO FOOTBALL</span><b>✳</b><span>LA MEJOR LIGA</span><b>✳</b></div></section>
+
+    <section class="fixtures-section" id="fixtures">
+      <div class="section-heading">
+        <div><p class="eyebrow">AGENDA DE PARTIDOS</p><h2>PRÓXIMOS <span>ENCUENTROS</span></h2></div>
+        <div class="heading-note"><span class="live-dot"></span> 6 PARTIDOS PROGRAMADOS</div>
+      </div>
+      <div class="filter-row" role="group" aria-label="Filtrar partidos">
+        <button class="filter active" data-filter="all">Todos <span>06</span></button>
+        <button class="filter" data-filter="oct">Octubre</button>
+        <button class="filter" data-filter="nov">Noviembre</button>
+        <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="teamSearch" type="search" placeholder="Buscar equipo..." aria-label="Buscar equipo"></label>
+      </div>
+      <div class="fixtures-grid" id="fixturesGrid"></div>
+    </section>
+
+    <section class="timezone-section" id="timezones">
+      <div class="timezone-intro">
+        <p class="eyebrow">EL FÚTBOL EN TU HORARIO</p>
+        <h2>LA MISMA PASIÓN.<br><span>DIFERENTE RELOJ.</span></h2>
+        <p>Todos los encuentros comienzan a las <strong>21:00 de Venezuela</strong>. Seleccioná un partido para consultar el horario local de cada región.</p>
+        <label class="select-wrap"><span>PARTIDO A CONSULTAR</span><select id="timezoneMatch"></select></label>
+        <div class="timezone-footnote">Horarios calculados automáticamente con las zonas horarias vigentes para cada fecha.</div>
+      </div>
+      <div class="timezone-panel">
+        <div class="timezone-panel-head"><div><span class="panel-kicker">HORA LOCAL</span><h3 id="timezoneDate">JUEVES · 29 OCT</h3></div><span class="timezone-origin"><img src="https://flagcdn.com/ve.svg" alt="Bandera de Venezuela"> BASE 21:00</span></div>
+        <div class="timezone-list" id="timezoneList"></div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="closing-ball">✳</div>
+      <p>TODO DEPENDE DE LA SUERTE</p><h2>TENDRÁS <span>LO NECESARIO</span> PARA GANAR?</h2>
+      <a href="#fixtures" class="back-top">VOLVER A LOS PARTIDOS ↑</a>
+    </section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span>UNIVERSO FOOTBALL<span class="brand-dot">.</span></span></a><p>HECHO POR OLIVIA (JULY) AIKU.</p><span>OCT / NOV 2026</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
